@@ -1,0 +1,5 @@
+目标： 实现一个memcache，具有超时回收功能
+实现：
+       定义一个Memcache接口，具有put、get方法
+       定义一个SimpleMemcache类，实现Memcache接口。
+         该类创建一个线程并启动运行，主线程为new该类的线程，启动的线程为Memcache守护线程，定期清除Memcache里过期的对象。
