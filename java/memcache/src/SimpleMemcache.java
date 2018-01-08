@@ -34,6 +34,7 @@ public class SimpleMemcache<K, V> implements Memcache<K,V>{
     private long loop = 10000L;
     private Thread t;
     private boolean run = false;
+    static HashMap<KVKey, SimpleMemcache> instanceMap;
 
     @Override
     public synchronized V put(K key, V val){
@@ -57,13 +58,30 @@ public class SimpleMemcache<K, V> implements Memcache<K,V>{
         return map.get(key);
     }
 
-    public SimpleMemcache() {
+    private SimpleMemcache() {
         createMonitorThread();
+        start();
     }
 
-    public SimpleMemcache(long  msec){
+    private SimpleMemcache(long  msec){
         this();
         this.expire = msec;
+    }
+
+    public static <K,V> SimpleMemcache<K,V> getSimpleMemcache(Class<K> key, Class<V> val){
+        if (key == null) return null;
+        if (val == null) return null;
+
+        if (instanceMap == null){
+            instanceMap = new HashMap<KVKey, SimpleMemcache>();
+        }
+        KVKey kvKey = new KVKey(key, val);
+        SimpleMemcache cache = instanceMap.get(kvKey);
+        if (cache == null){
+            cache = new SimpleMemcache<K,V>();
+            instanceMap.put(kvKey, cache);
+        }
+        return cache;
     }
 
     public void createMonitorThread(){
@@ -96,6 +114,7 @@ public class SimpleMemcache<K, V> implements Memcache<K,V>{
 
     public void start(){
         run = true;
+        t.setDaemon(true);
         t.start();
     }
 
