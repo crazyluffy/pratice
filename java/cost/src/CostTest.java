@@ -1,5 +1,7 @@
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CostTest {
     private List<Cost> costList = null;
@@ -11,9 +13,9 @@ public class CostTest {
        if(costList == null){
            return null;
        }
-       Iterator it = costList.iterator();
+       Iterator<Cost> it = costList.iterator();
        while(it.hasNext()){
-           t = (Cost) it.next();
+           t = it.next();
            if (t.getDate().equals(date)){
                if(cost == null){
                    cost = t;
@@ -33,9 +35,9 @@ public class CostTest {
             return null;
         }
 
-        Iterator it = costList.iterator();
+        Iterator<Cost> it = costList.iterator();
         while(it.hasNext()){
-           cost = (Cost) it.next();
+           cost =  it.next();
            if(cost.getName().equals(name) && cost.getDate().equals(date)){
                return cost.getValue();
            }
@@ -44,8 +46,20 @@ public class CostTest {
     }
 
     public void insertCost(Cost cost){
+        Iterator<Cost> it = costList.iterator();
+        while(it.hasNext()){
 
+        }
     }
+
+//    public String getPerson(String date) {
+//        return Optional.ofNullable(costList.stream().collect(Collectors.groupingBy(Cost::getDate)).get(date))
+//                .orElse(Collections.emptyList()).stream().sorted((a, b) -> Double.compare(b.getValue(), a.getValue())).findFirst().orElse(new Cost()).getName();
+//    }
+//    public Double getValue(String name, String date) {
+//        return Optional.ofNullable(costList.stream().collect(Collectors.groupingBy(c -> new CostKey(c.getName(), c.getDate()))).get(new CostKey(name, date)))
+//                .orElse(Collections.emptyList()).stream().findFirst().orElse(new Cost()).getValue();
+//    }
 
     public static void main(String[] args) {
 

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cost/cost.iml" filepath="$PROJECT_DIR$/cost/cost.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/memcache/memcache.iml" filepath="$PROJECT_DIR$/memcache/memcache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minichat/minichat.iml" filepath="$PROJECT_DIR$/minichat/minichat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mytest/mytest.iml" filepath="$PROJECT_DIR$/mytest/mytest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test/spring-test.iml" filepath="$PROJECT_DIR$/spring-test/spring-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tjdbc/tjdbc.iml" filepath="$PROJECT_DIR$/tjdbc/tjdbc.iml" />
     </modules>
   </component>
 </project>
