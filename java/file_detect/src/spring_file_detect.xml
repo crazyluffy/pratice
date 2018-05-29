@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="test" class="rm.Test"/>
+
+    <bean id="taskNode0" class="rm.TaskNode">
+        <property name="cronExpression" value="0 0 16 * * *"/>
+        <property name="fileName" value="a.txt"/>
+    </bean>
+
+    <bean id="taskNode1" class="rm.TaskNode">
+        <property name="cronExpression" value="0 10 16 * * *"/>
+        <property name="fileName" value="b.txt"/>
+    </bean>
+
+    <util:list id="taskList">
+        <ref bean="taskNode0"/>
+        <ref bean="taskNode1"/>
+    </util:list>
+
+    <bean id="dailyJob" class="rm.DailyDetect">
+        <constructor-arg ref="taskList"/>
+    </bean>
+    <bean id="updatejobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="dailyJob"/>
+        </property>
+        <property name="targetMethod">
+            <value>update</value>
+        </property>
+    </bean>
+
+    <bean id="taskNode1Job" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="taskNode1"/>
+        </property>
+        <property name="targetMethod">
+            <value>detect</value>
+        </property>
+        <property name="arguments">
+            <ref bean="dailyJob"/>
+        </property>
+    </bean>
+
+    <bean id="detectJob" class="rm.DetectJob"/>
+    <bean id="detectJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="detectJob"/>
+        </property>
+        <property name="targetMethod">
+            <value>detect</value>
+        </property>
+        <property name="arguments">
+            <list>
+                <value>"testABCD"</value>
+                <value>"testEFGH"</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="detectJobMethod"></property>
+        <property name="cronExpression" value="0/5 * * * * ?"></property>
+    </bean>
+
+    <bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="CronTriggerBean"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

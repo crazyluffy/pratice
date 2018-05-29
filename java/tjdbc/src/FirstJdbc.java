@@ -13,6 +13,7 @@ public class FirstJdbc {
     public static void main(String[] args) throws SQLException {
         FirstJdbc fj = new FirstJdbc();
         fj.run();
+        
     }
 
     public void run() {

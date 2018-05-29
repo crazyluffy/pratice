@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cost/cost.iml" filepath="$PROJECT_DIR$/cost/cost.iml" />
+      <module fileurl="file://$PROJECT_DIR$/file_detect/file_detect.iml" filepath="$PROJECT_DIR$/file_detect/file_detect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/memcache/file_detect.iml" filepath="$PROJECT_DIR$/memcache/file_detect.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/memcache/memcache.iml" filepath="$PROJECT_DIR$/memcache/memcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/minichat/minichat.iml" filepath="$PROJECT_DIR$/minichat/minichat.iml" />
