@@ -26,10 +26,10 @@ public class EmpJdbcTemplate {
 
     public Emp getEmp(Integer eno){
         String SQL = "select * from " + tableName + " where eno = :eno";
-        System.out.println(SQL);
+//        System.out.println(SQL);
         Map<String, Integer> parameterMap =  new HashMap<String, Integer>();
         parameterMap.put("eno", eno);
-        System.out.println(parameterMap);
+//        System.out.println(parameterMap);
         Emp emp = template.queryForObject(SQL, parameterMap, new EmpMapper());
         return emp;
     }

@@ -5,9 +5,9 @@ public class EmpDeal {
 
     public EmpDeal(EmpJdbcTemplate eTemplate) {
         this.eTemplate = eTemplate;
-        System.out.println("result:");
+//        System.out.println("result:");
         Emp emp = eTemplate.getEmp(1);
-        System.out.println("\temp1:");
+//        System.out.println("\temp1:");
         System.out.println(emp);
     }
 }
