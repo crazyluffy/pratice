@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html note</title>
+</head>
+<body>
+
+    <!--
+        font: 设置字体
+            属性： size 取值范围 1-7
+                   color 颜色 取值 red green等 或者 #FFFFFF RGB值
+        br: 换行
+        hr: 水平线
+    -->
+    <font size="5" color="#8a2be2">Html study note</font> <br/> <hr/>
+
+    <!--
+        标题标签
+        <h1></h1> <h2></h2> <h3></h3> ... <h6></h6>
+    -->
+    <h1>标题一</h1>
+    <h2>标题二</h2>
+    <h6>标题六</h6>
+    <hr size="2" color="blue"/>
+
+    <!-- 特殊字符 -->
+    <h2>特殊字符</h2>
+    小于号： "&lt;" <br/>
+    大于号： "&gt;" <br/>
+    空格： "&nbsp;" <br/>
+    与字符： "&amp;" <br/>
+    注册符："&reg;" <br/>
+    版权符： "&copy;" <br/>
+    <hr size="2" color="blue"/>
+
+    <!-- 列表标签 -->
+    <h2>列表标签</h2>
+    <dl>
+       <dt>部门</dt> <!-- 上层内容 -->
+        <dd>人事部</dd> <!-- 下层内容 -->
+        <dd>事业部</dd>
+        <dd>财务部</dd>
+    </dl>
+    <hr size="2" color="blue"/>
+
+    <!-- 有序列表 -->
+    <h2>有序列表</h2>
+    <ol type="1"> <!-- type:排序方式 取值 1 a i等 -->
+        <li>人事部</li>
+        <li>事业部</li>
+        <li>财务部</li>
+    </ol>
+    <hr size="2" color="blue"/>
+
+    <!-- 无序列表 -->
+    <h2>无序列表</h2>
+    <ul type="circle"> <!-- type:排序方式 取值： circle（空心圆） disc(实心圆, 默认) square(方块） -->
+        <li>人事部</li>
+        <li>事业部</li>
+        <li>财务部</li>
+    </ul>
+    <hr size="2" color="blue"/>
+
+    <!-- 图像标签 -->
+    <h2>图像标签</h2>
+    <!--
+        属性： src: 来源
+               width: 宽度
+               height: 高度
+               alt: 图片上显示的文字(图片加载失败显示) （浏览器可能不支持）
+    -->
+    <img src="01.jpg" alt="图像标签" width="320" height="213">
+    <hr size="2" color="blue"/>
+
+    <!-- 超链接标签 -->
+    <!--
+        target: 打开方式 取值：_blank 新窗口打开   _self 当前窗口打开，（默认值）
+    -->
+    <h2>链接资源</h2>
+    <a href="http://www.baidu.com" target="_blank">百度一下</a>
+    <br/>
+    <a href="#">占位链接</a>
+    <hr size="2" color="blue"/>
+
+    <!-- 定位资源 -->
+    <h2>定位资源</h2>
+    <a name="top">顶部</a> <br/>
+    <a href="#top">回到顶部</a>
+    <hr size="2" color="blue"/>
+
+    <!-- 表格标签 -->
+    <h2>表格标签</h2>
+    <a href="table.html" target="_blank">表格标签案例</a> <!-- 偷个懒 -->
+    <table></table>
+    <hr size="2" color="blue"/>
+
+    <!-- 表单标签 -->
+    <!-- 大部分输入项 使用 <input type=""/>实现 -->
+    <!--
+        form: 定义一个表单
+            属性:
+                action 提交到的地址，默认当前页面
+                method  提交方式 常用的有get和post， 默认get
+                enctype 用于文件上传
+    -->
+    <h2>表单标签</h2>
+    <form>
+        <!-- 普通输入项 -->
+       手机号码：<input type="text" name="phone"/>  <br/>
+        <!-- 密码输入项 -->
+       创建密码：<input type="password" name="pwd"/> <br/>
+         <!-- 单选框
+            以name分类 必须要有value属性 （即name为K，value为V）
+            属性： checked="checked" 设为默认值
+            -->
+        性别：   <input type="radio" name="sex" value="female" checked="checked">女 <input type="radio" name="sex" value="male">男 <br/>
+        <!-- 复选框
+            同单选框，以name分类，必须要有value属性 （亦 name为K，value为V)
+            属性：ckecked="ckecked" 设为默认值
+        -->
+        爱好：   <input type="checkbox" name="hobby" value="read"/>阅读
+                 <input type="checkbox" name="hobby" value="sport"/>运动
+                 <input type="checkbox" name="hobby" value="write"/>写作
+        <br/>
+        <!-- 文件输入项 -->
+        文件：<input type="file" name="file"> <br/>
+        <!-- 下拉列表框
+                属性： selectd="selected" 设为默认值
+         -->
+        生日：  <select name="birth">
+                    <option value="0" selected="selected">请选择</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                </select> <br/>
+        <!-- 文本域 -->
+        自我描述：<textarea cols="50" rows="10"></textarea> <br/>
+        <!-- -->
+        <!-- 隐藏项,不在页面显示，但存在于html中 -->
+        隐藏项： <input type="hidden"/> <br/>
+        <!-- 提交按钮 -->
+        <input type="submit" value="注册"/> <br/>
+        <!-- 图片提交 -->
+        <input type="image" src="01.jpg" width="51" height="34"/> <br/>
+        <!-- 重置按钮 -->
+        <input type="reset" value="chong置"/> <br/>
+        <!-- 普通按钮 通常与js一起使用 -->
+        <input type="button" value="pu通按钮"/> <br/>
+    </form>
+    <!--
+        form可与table结合使用
+        <form>
+            <table>
+                <tr>
+                    <td aligm="right">注册邮箱：</td>
+                    <td><input type="text" name="mail"/></td>
+                </tr>
+            </table>
+        </form>
+    -->
+    <hr size="2" color="blue"/>
+    <h2>其他常用标签</h2>
+    <a href="other.html" target="_blank">其他标签示例</a>
+    <hr size="2" color="blue"/>
+    <h2>头标签</h2>
+    <!--
+        title: 设置标签显示的内容
+        meta: 设置页面的一些相关内容
+        <meta name="keywords" contant="aaa,bbb,ccc">
+        <meta http-equiv="refresh" content="3;url=https://www.baidu.com"
+        <base target="_blank"/> 设置网页中的链接打开方式
+        link: 引入外部文件
+    -->
+    <hr size="2" color="blue"/>
+    <!-- 通常被div代替 -->
+    <h2>框架标签</h2>
+    <a href="frame.html" target="_blank">框架标签案例</a> <br/>
+    <a href="note.html" target="down_right">框架链接示例</a>
+    <hr size="2" color="blue"/>
+
+</body>
+</html>

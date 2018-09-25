@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Test</title>
+</head>
+<body>
+
+    <table border="1" bordercolor="green" cellspacing="0" width="300" height="200">
+        <!--
+        border: 显示单元格
+        bordercolor: 单元格颜色
+        cellspacing: 单元格间隙
+        width: 表格的宽度
+        height: 表格的高度
+         -->
+        <caption> 成员表 </caption> <!-- 表格标题 (基本用不到) -->
+        <!--
+            tr: 一行
+            td: 一个单元格
+            th: 以居中加粗处理的单元格
+                align：对其方式，取值：left right center
+        -->
+        <tr align="center">
+           <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr>
+        <tr align="center">
+            <td align="left">东方不败</td>
+            <td>男</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <th>岳不群</th>
+            <th>男</th>
+            <th>30</th>
+        </tr>
+        <tr>
+            <th>林平之</th>
+            <th>男</th>
+            <th>20</th>
+        </tr>
+    </table>
+    <br/>
+    <!--
+        合并单元格
+            colspan: 跨列操作，即合并行
+            rowspan: 跨行操作，即合并列
+    -->
+    <table border="1" bordercolor="green" cellspacing="0" width="300" height="200">
+       <tr>
+           <td align="center" colspan="3">人员信息</td>
+       </tr>
+        <tr align="center"> <!--  left right -->
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr>
+        <tr align="center">
+            <td align="left">东方不败</td>
+            <td rowspan="3">男</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <th>岳不群</th>
+            <!-- <th>男</th> -->
+            <th>30</th>
+        </tr>
+        <tr>
+            <th>林平之</th>
+            <!-- <th>男</th> -->
+            <th>20</th>
+        </tr>
+    </table>
+    <br/>
+
+</body>
+</html>

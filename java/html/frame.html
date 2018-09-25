@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frame Test</title>
+</head>
+
+<!-- frameset 不能写在body内 -->
+<!--
+<body>
+</body>
+-->
+
+    <!--
+        <frameset rows="80,*"> 按行划分
+        <frameset cols="80,*"> 按列划分
+        <frame name="a_name" src="a_link"> 显示的具体页面
+    -->
+    <frameset rows="400,*">
+        <frame name="up" src="picture.html"/>
+        <frameset cols="800,*">
+            <frame name="down_left" src="note.html"/>
+            <frame name="down_right"/>
+        </frameset>
+
+    </frameset>
+
+</html>
