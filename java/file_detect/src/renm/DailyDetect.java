@@ -1,9 +1,8 @@
-package rm;
+package renm;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /*
 //plan 1
@@ -22,8 +21,14 @@ class ThreadNodeInfo{
 */
 
 // plan 2
-class ThreadInfo {
+class DetectThreadInfo {
+    String file = null;
     boolean done = false;
+    String date;
+
+    public DetectThreadInfo(String file) {
+        this.file = file;
+    }
 
     public boolean isDone() {
         return done;
@@ -36,20 +41,46 @@ class ThreadInfo {
 
 public class DailyDetect {
 //    List<ThreadNodeInfo> fileList = new ArrayBlockingQueue<ThreadNodeInfo>(); // plan 1
-    HashMap<String, ThreadInfo> taskMap = new HashMap<String, ThreadInfo>(); // plan 2
+    HashMap<String, DetectThreadInfo> taskMap = new HashMap<String, DetectThreadInfo>(); // plan 2
 
-    public DailyDetect(List<TaskNode> task) {
+    public DailyDetect(List<DetectTask> tasks) {
         System.out.println("daily detect init: add file from task list, check whether file already come");
+        // getTaskList();
+        Iterator<DetectTask> it = tasks.iterator();
+        String file;
+        DetectThreadInfo info;
+        while (it.hasNext()){
+            file = it.next().getFileName();
+            info = new DetectThreadInfo(file);
+            taskMap.put(file, info);
+
+            System.out.println("check result from db for file:" +  file);
+            boolean done = false; // = checkFormDb();
+
+            info.setDone(done);
+        }
         detect();
     }
 
     public void update(){
         System.out.println("daily detect update");
+        // getTaskList();
         detect();
     }
 
     private void detect() {
         System.out.println("create detect thread for every file in fileList(taskMap)");
+        Iterator it=taskMap.keySet().iterator();
+        String file;
+        DetectThreadInfo info;
+        while(it.hasNext()) {
+            file = (String) it.next();
+            info = taskMap.get(file);
+            System.out.println(file + ":" + info);
+            if(info.isDone() == false){
+                System.out.println("create thread for file:" + file);
+            }
+        }
     }
 
     public boolean check(String fileName){

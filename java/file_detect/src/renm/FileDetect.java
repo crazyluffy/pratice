@@ -1,4 +1,4 @@
-package rm;
+package renm;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
