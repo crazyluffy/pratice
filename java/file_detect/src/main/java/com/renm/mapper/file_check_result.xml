@@ -9,4 +9,7 @@
         INSERT INTO file_check_result (id, time, res, fc_id) VALUES
           (DEFAULT, #{time}, #{res}, #{fileCron.id})
     </insert>
+    <select id="selAll" resultType="com.renm.pojo.FileCheckResult">
+        SELECT * FROM file_check_result
+    </select>
 </mapper>

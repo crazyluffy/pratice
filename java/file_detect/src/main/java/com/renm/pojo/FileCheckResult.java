@@ -39,4 +39,14 @@ public class FileCheckResult {
     public void setFileCron(FileCron fileCron) {
         this.fileCron = fileCron;
     }
+
+    @Override
+    public String toString() {
+        return "FileCheckResult{" +
+                "id=" + id +
+                ", time=" + time +
+                ", res=" + res +
+                ", fileCron=" + fileCron +
+                '}';
+    }
 }

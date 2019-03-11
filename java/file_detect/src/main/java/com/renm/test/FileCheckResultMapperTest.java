@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 public class FileCheckResultMapperTest {
     public static void main(String[] args) {
@@ -20,5 +21,9 @@ public class FileCheckResultMapperTest {
         fileCheckResult.setTime(new Date());
         FileCheckResultMapper fileCheckResultMapper = ac.getBean(FileCheckResultMapper.class);
         fileCheckResultMapper.insert(fileCheckResult);
+        List<FileCheckResult> fileCheckResults = fileCheckResultMapper.selAll();
+        for (FileCheckResult fileCheckResult1: fileCheckResults) {
+            System.out.println(fileCheckResult1);
+        }
     }
 }

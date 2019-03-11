@@ -1,7 +1,7 @@
 package com.renm.mapper;
 
 import com.renm.pojo.FileCron;
-import org.apache.ibatis.annotations.Select;
+//import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
