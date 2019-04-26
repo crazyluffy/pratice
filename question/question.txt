@@ -1,0 +1,14 @@
+time:  when the question come out
+    Q:  what's the question 
+time: when the question was resolved
+    A:  what's the answer
+result: 
+type:
+-------------------------------------------------------
+201904261220：
+    Q:内部类private方法如何用Junit做测试?
+
+    A:
+result:
+type: java junit
+-------------------------------------------------------
