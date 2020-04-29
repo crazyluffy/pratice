@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tquartz" />
+        <module name="springmvc02" />
+        <module name="springmvc-simple" />
+        <module name="tmaven" />
+        <module name="spring-test" />
+        <module name="minichat" />
+        <module name="tmaven2" />
+        <module name="spring-quartz" />
+        <module name="cost" />
+        <module name="spring-jdbc" />
+        <module name="mybatis03" />
+        <module name="memcache" />
+        <module name="mybatis01" />
+        <module name="file_detect" />
+        <module name="springmybatis" />
+        <module name="spring03" />
+        <module name="mytest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cost" target="1.8" />
+      <module name="file_detect" target="1.8" />
+      <module name="java" target="1.8" />
+      <module name="memcache" target="1.8" />
+      <module name="minichat" target="1.8" />
+      <module name="mybatis01" target="1.8" />
+      <module name="mybatis03" target="1.8" />
+      <module name="mytest" target="1.8" />
+      <module name="spring-jdbc" target="1.8" />
+      <module name="spring-quartz" target="1.8" />
+      <module name="spring-test" target="1.8" />
+      <module name="spring03" target="1.8" />
+      <module name="springmvc-simple" target="1.8" />
+      <module name="springmvc02" target="1.8" />
+      <module name="springmybatis" target="1.8" />
+      <module name="test" target="1.8" />
+      <module name="tmaven" target="1.8" />
+      <module name="tmaven2" target="1.8" />
+      <module name="tquartz" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

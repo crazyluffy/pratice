@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.renm.mapper.FileCheckResultMapper">
+    <insert id="insert" parameterType="org.renm.pojo.FileCheckResult">
+        INSERT INTO file_check_result (id, time, res, fc_id) VALUES
+          (DEFAULT, #{time}, #{res}, #{fileCron.id})
+    </insert>
+    <select id="selAll" resultType="org.renm.pojo.FileCheckResult">
+        SELECT * FROM file_check_result
+    </select>
+</mapper>
